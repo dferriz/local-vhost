@@ -5,12 +5,13 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        - SSH_KEY=${SSH_KEY}
     container_name: ec2_container
     tty: true
-    environment:
-      - SSH_KEU=value
     volumes: # This is just for local
       - /var/run/docker.sock:/var/run/docker.sock
+      - /var/tmp/cluster:/var/tmp/cluster
     networks:
       ec2-network:
         ipv4_address: 192.168.80.2

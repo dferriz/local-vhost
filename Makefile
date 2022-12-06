@@ -6,6 +6,11 @@ MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
 MAKEFLAGS += --no-print-directory
 
+ifneq ("$(wildcard .env)","")
+	include .env
+	export
+endif
+
 up:
 	@docker network create --driver=bridge --subnet=192.168.80.254/24 ec2-network
 	@docker-compose build

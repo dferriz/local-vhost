@@ -1,1 +1,4 @@
 .env
+ssm-user_config
+ssm-user_id_rsa
+ssm-user_id_rsa.pub
