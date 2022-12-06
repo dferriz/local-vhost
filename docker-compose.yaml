@@ -12,6 +12,7 @@ services:
     volumes: # This is just for local
       - /var/run/docker.sock:/var/run/docker.sock
       - /var/tmp/cluster:/var/tmp/cluster
+      - /var/lib/docker/containers:/var/lib/docker/containers
     networks:
       ec2-network:
         ipv4_address: 192.168.80.2
